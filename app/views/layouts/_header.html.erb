@@ -1,0 +1,6 @@
+<% if @user.present? %>
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "h-10 px-6 font-semibold rounded-md bg-red-500 text-white" %>
+<% else %>
+<%= button_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post,class: "h-10 px-6 font-semibold rounded-md bg-blue-500 text-white" %>
+<%= button_to "Twitterでサインアップ", user_twitter_omniauth_authorize_path, method: :post,class: "h-10 px-6 font-semibold rounded-md bg-blue-500 text-white" %>
+<% end %>
