@@ -7,9 +7,10 @@ ruby '3.1.0'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
-gem 'omniauth'
+gem 'omniauth', '1.9.1'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'puma', '~> 5.0'
@@ -19,10 +20,12 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
+gem 'twitter'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
