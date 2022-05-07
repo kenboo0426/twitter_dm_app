@@ -23,3 +23,6 @@ Metrics/AbcSize:
 
 RSpec/NestedGroups:
   Max: 4
+
+Style/HashSyntax:
+  Enabled: false
