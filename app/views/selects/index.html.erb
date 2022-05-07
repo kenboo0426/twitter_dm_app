@@ -1,11 +1,16 @@
 <div>
   ユーザー一覧
-  <%= form_with url: selects_path, method: :get,class: "flex flex-col" do |form| %>
-  <%= form.text_field :keyword, class: "mb-8" %>
-  <%= form.check_box :filter_messaged %>
-  <%= form.label :filter_messaged, "すでにDM済みのユーザーを省く", class: "mb-8"%>
-  <%= form.submit "検索" %>
-  <% end %>
+  <div class="">
+    <%= form_with url: selects_path, method: :get do |form| %>
+    <div class="mb-10"> <%= form.text_field :keyword %></div>
+    <p>※15分につき15リクエストまで</p>
+    <div class="mb-8">
+      <%= form.check_box :filter_messaged %>
+      <%= form.label :filter_messaged, "すでにDM済みのユーザーを省く" %>
+    </div>
+    <div><%= form.submit "検索" %></div>
+    <% end %>
+  </div>
   <br>
   <% @users.each do |user| %>
   <% unless user[:already_sent_message] %>
