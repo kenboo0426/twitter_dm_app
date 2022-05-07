@@ -1,0 +1,21 @@
+<div>
+  ユーザー一覧
+  <%= form_with url: selects_path, method: :get,class: "flex flex-col" do |form| %>
+  <%= form.text_field :keyword, class: "mb-8" %>
+  <%= form.check_box :filter_messaged %>
+  <%= form.label :filter_messaged, "すでにDM済みのユーザーを省く", class: "mb-8"%>
+  <%= form.submit "検索" %>
+  <% end %>
+  <br>
+  <% @users.each do |user| %>
+  <% unless user[:already_sent_message] %>
+  <%= user[:name] %>
+  <%= image_tag user[:profile_image_url] %>
+  <%= user[:description] %>
+  <%= link_to "https://twitter.com/#{user[:screen_name]}", "https://twitter.com/#{user[:screen_name]}"%>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <% end %>
+</div>
